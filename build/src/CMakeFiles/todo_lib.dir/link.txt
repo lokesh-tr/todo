@@ -1,0 +1,2 @@
+C:\msys64\ucrt64\bin\ar.exe qc libtodo_lib.a CMakeFiles/todo_lib.dir/helloworld.cpp.obj
+C:\msys64\ucrt64\bin\ranlib.exe libtodo_lib.a

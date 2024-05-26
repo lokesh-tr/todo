@@ -1,0 +1,14 @@
+[
+{
+  "directory": "E:/---Projects---/TODO App - C++/todo/build/src",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/todo_lib.dir/includes_CXX.rsp -g -o CMakeFiles\\todo_lib.dir\\helloworld.cpp.obj -c \"E:\\---Projects---\\TODO App - C++\\todo\\src\\helloworld.cpp\"",
+  "file": "E:/---Projects---/TODO App - C++/todo/src/helloworld.cpp",
+  "output": "src/CMakeFiles/todo_lib.dir/helloworld.cpp.obj"
+},
+{
+  "directory": "E:/---Projects---/TODO App - C++/todo/build/apps",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/todo.dir/includes_CXX.rsp -g -o CMakeFiles\\todo.dir\\main.cpp.obj -c \"E:\\---Projects---\\TODO App - C++\\todo\\apps\\main.cpp\"",
+  "file": "E:/---Projects---/TODO App - C++/todo/apps/main.cpp",
+  "output": "apps/CMakeFiles/todo.dir/main.cpp.obj"
+}
+]
