@@ -1,0 +1,6 @@
+<component name="CopyrightManager">
+  <copyright>
+    <option name="notice" value="===-----------------------------------------------------------------------------------------===&#10;&#10; This source file is part of the Todo Command-Line Application open source project&#10;&#10; Copyright (c) 2024 Lokesh.T.R, Aadith Jagan Pamarthi and the contributors&#10; Licensed under Apache License v2.0&#10;&#10; See https://www.apache.org/licenses/LICENSE-2.0.txt for license information&#10; See https://github.com/lokesh-tr/todo/blob/main/CONTRIBUTORS.txt for the list of contributors&#10;&#10;===-----------------------------------------------------------------------------------------===" />
+    <option name="myName" value="Todo CLI" />
+  </copyright>
+</component>
