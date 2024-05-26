@@ -1,6 +1,3 @@
+add_library(todo_lib TodoModel.cpp)
 
-
-#add_library(todo_lib helloworld.cpp)
-
-#target_include_directories(todo_lib PUBLIC ../include)
-
+target_include_directories(todo_lib PUBLIC ../include)
