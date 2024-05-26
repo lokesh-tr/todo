@@ -1,4 +1,4 @@
 ./apps/cmake-build-debug
-/build
+./build
 ./cmake-build-debug
 ./src/cmake-build-debug
