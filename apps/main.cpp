@@ -39,6 +39,7 @@ struct Todo {
 int main(int argc, char* argv[]) {
     if (argc < 2) {
         // todo: command mode
+        return 1;
     }
 
     std::string command = argv[1];
