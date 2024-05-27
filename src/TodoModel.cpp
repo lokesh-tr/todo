@@ -4,10 +4,6 @@
 
 unsigned int TodoModel::nextId = 1;
 
-TodoModel::TodoModel() {
-
-};
-
 TodoModel::TodoModel() : id(nextId++){
     this->title = "Task #" + std::to_string(id);
     this->description = "Description ...";
@@ -54,5 +50,3 @@ void TodoModel::setTitle(std::string title) {
 void TodoModel::setDescription(std::string description) {
     this->description = description;
 }
-
-TodoModel::~TodoModel() = default;
