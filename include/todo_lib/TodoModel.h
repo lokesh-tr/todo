@@ -30,7 +30,9 @@ public:
     void check();    
     void uncheck();
 
+
     bool getStatus();
+    int getId();
     std::string getTitle();
     std::string getDescription();
 

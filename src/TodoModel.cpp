@@ -45,6 +45,9 @@ void TodoModel::uncheck() {
 bool TodoModel::getStatus() {
     return status;
 }
+int TodoModel::getId() {
+    return id;
+}
 std::string TodoModel::getTitle() {
     return title;
 }
