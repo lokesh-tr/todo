@@ -1,17 +1,27 @@
 #include "todo_lib/TodoModel.h"
+#include <string>
+#include <iostream>
 
-//Constructors
-TodoModel::TodoModel() {
-    // empty constructor
+unsigned int TodoModel::nextId = 1;
+
+TodoModel::TodoModel() : id(nextId++){
+    this->title = "Task #" + std::to_string(id);
+    this->description = "Description ...";
+    this->status = false;
 }
-TodoModel::TodoModel(int id, std::string title) {
-    this->id = id;
+TodoModel::TodoModel(std::string title) : id(nextId++) {
     this->title = title;
+    this->description = "Description ...";
+    this->status = false;
 }
-TodoModel::TodoModel(int id, std::string title, std::string description) {
-    this->id = id;
+TodoModel::TodoModel(std::string title, std::string description) : id(nextId++) {
     this->title = title;
     this->description = description;
+}
+TodoModel::TodoModel(std::string title, std::string description, bool status) : id(nextId++) {
+    this->title = title;
+    this->description = description;
+    this->status = status;
 }
 
 //Additional Functions
@@ -34,10 +44,10 @@ std::string TodoModel::getDescription() {
 }
 
 // Setters
-void TodoModel::setStatus(bool state) {
+void TodoModel::setStatus(bool status) {
     // needs exception handling
-    if (state == true || state == false) {
-        status = state;
+    if (status == true || status == false) {
+        this->status = status;
     }
 }
 void TodoModel::setTitle(std::string title) {
@@ -46,3 +56,7 @@ void TodoModel::setTitle(std::string title) {
 void TodoModel::setDescription(std::string description) {
     this->description = description;
 }
+
+TodoModel::~TodoModel() {
+    std::cout << "Task #" << id << " had been removed" << std::endl;
+};
