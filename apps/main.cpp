@@ -25,18 +25,6 @@ void peek(int id);
 void deleteTodo(int id);
 void add(std::string title, std::string description, bool status);
 
-// struct Todo {
-//     Todo(const std::string title, std::string description, bool status) {
-//         this->title = title;
-//         this->description = description;
-//         this->status = status;
-//     }
-
-//     int id;
-//     bool status;
-//     std::string title;
-//     std::string description;
-// };
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {

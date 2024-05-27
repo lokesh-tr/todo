@@ -4,6 +4,10 @@
 
 unsigned int TodoModel::nextId = 1;
 
+TodoModel::TodoModel() {
+
+};
+
 TodoModel::TodoModel() : id(nextId++){
     this->title = "Task #" + std::to_string(id);
     this->description = "Description ...";
@@ -24,7 +28,6 @@ TodoModel::TodoModel(std::string title, std::string description, bool status) : 
     this->status = status;
 }
 
-//Additional Functions
 void TodoModel::check() {
     status = true;
 }
@@ -32,7 +35,6 @@ void TodoModel::uncheck() {
     status = false;
 }
 
-// Getters
 bool TodoModel::getStatus() {
     return status;
 }
@@ -43,12 +45,8 @@ std::string TodoModel::getDescription() {
     return description;
 }
 
-// Setters
 void TodoModel::setStatus(bool status) {
-    // needs exception handling
-    if (status == true || status == false) {
-        this->status = status;
-    }
+    this->status = status;
 }
 void TodoModel::setTitle(std::string title) {
     this->title = title;
@@ -57,6 +55,4 @@ void TodoModel::setDescription(std::string description) {
     this->description = description;
 }
 
-TodoModel::~TodoModel() {
-    std::cout << "Task #" << id << " had been removed" << std::endl;
-};
+TodoModel::~TodoModel() = default;

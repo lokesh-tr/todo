@@ -39,7 +39,7 @@ public:
     void setTitle(std::string title);
     void setDescription(std::string description);
 
-    ~TodoModel();
+    ~TodoModel() = default;
 };
 
 #endif
