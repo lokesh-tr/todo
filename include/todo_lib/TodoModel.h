@@ -14,6 +14,7 @@
 #define TODOMODEL_H
 
 #include <string>
+#include <nlohmann/json.hpp>
 
 class TodoModel {
 private:
@@ -31,14 +32,16 @@ public:
     void uncheck();
 
 
-    bool getStatus();
-    int getId();
-    std::string getTitle();
-    std::string getDescription();
+    bool getStatus() const;
+    int getId() const;
+    std::string getTitle() const;
+    std::string getDescription() const;
 
     void setStatus(bool status);
     void setTitle(std::string title);
     void setDescription(std::string description);
+
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(TodoModel, id, title, description, status);
 };
 
 #endif

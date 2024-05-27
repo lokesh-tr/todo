@@ -42,16 +42,16 @@ void TodoModel::uncheck() {
     status = false;
 }
 
-bool TodoModel::getStatus() {
+bool TodoModel::getStatus() const {
     return status;
 }
-int TodoModel::getId() {
+int TodoModel::getId() const {
     return id;
 }
-std::string TodoModel::getTitle() {
+std::string TodoModel::getTitle() const {
     return title;
 }
-std::string TodoModel::getDescription() {
+std::string TodoModel::getDescription() const {
     return description;
 }
 
