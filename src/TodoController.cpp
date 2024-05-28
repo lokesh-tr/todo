@@ -14,8 +14,8 @@
 #include <vector>
 #include <algorithm>
 
-#include <todo_lib\TodoController.h>
-#include <todo_lib\TodoModel.h>
+#include <todo_lib/TodoController.h>
+#include <todo_lib/TodoModel.h>
 
 TodoController* TodoController::instance = new TodoController();
 
