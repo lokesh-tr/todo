@@ -1,4 +1,4 @@
-add_library(todo_lib TodoModel.cpp
+add_library(todo_lib TodoModel.cpp TodoController.cpp
         PersistenceController.cpp)
 
 include(FetchContent)

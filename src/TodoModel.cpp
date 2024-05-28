@@ -15,21 +15,26 @@
 
 #include "todo_lib/TodoModel.h"
 
-TodoModel::TodoModel() {
-    this->title = "Task Name";
-    this->description = "Description ...";
-    this->status = false;
-}
-TodoModel::TodoModel(std::string title){
+TodoModel::TodoModel(int id, std::string title) {
+    this->id = id;
     this->title = title;
-    this->description = "Description ...";
+    this->description = "";
     this->status = false;
 }
-TodoModel::TodoModel(std::string title, std::string description){
+TodoModel::TodoModel(int id, std::string title, std::string description){
+    this->id = id;
     this->title = title;
     this->description = description;
+    this->status = false;
 }
-TodoModel::TodoModel(std::string title, std::string description, bool status){
+TodoModel::TodoModel(int id, std::string title, bool status) {
+    this->id = id;
+    this->title = title;
+    this->description = "";
+    this->status = status;
+}
+TodoModel::TodoModel(int id, std::string title, std::string description, bool status){
+    this->id = id;
     this->title = title;
     this->description = description;
     this->status = status;
