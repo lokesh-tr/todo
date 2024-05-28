@@ -20,6 +20,12 @@ TodoModel::TodoModel() {
     this->description = "Description ...";
     this->status = false;
 }
+TodoModel::TodoModel(int id) {
+    this->id = id;
+    this->title = "Task Name";
+    this->description = "Description ...";
+    this->status = false;
+}
 TodoModel::TodoModel(std::string title){
     this->title = title;
     this->description = "Description ...";
