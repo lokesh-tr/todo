@@ -22,11 +22,10 @@ private:
     std::string title;
     std::string description;
 public:
-    TodoModel();
-    TodoModel(int id);
-    TodoModel(std::string title);
-    TodoModel(std::string title, std::string description);
-    TodoModel(std::string title, std::string description, bool status);
+    TodoModel(int id, std::string title);
+    TodoModel(int id, std::string title, std::string description);
+    TodoModel(int id, std::string title, bool status);
+    TodoModel(int id, std::string title, std::string description, bool status);
 
     void check();    
     void uncheck();
