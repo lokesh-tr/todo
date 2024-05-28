@@ -23,6 +23,7 @@ private:
     std::string description;
 public:
     TodoModel();
+    TodoModel(int id);
     TodoModel(std::string title);
     TodoModel(std::string title, std::string description);
     TodoModel(std::string title, std::string description, bool status);

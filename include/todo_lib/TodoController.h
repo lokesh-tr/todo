@@ -10,32 +10,34 @@
 //
 // ===-----------------------------------------------------------------------------------------===
 
-#include <todo_lib\TodoControl.h>
+#ifndef TODOCONTROL_H
+#define TODOCONTROL_H
 
-void TodoControl::checkTodo() {
+#include <vector>
 
-}
+#include "todo_lib/TodoModel.h"
 
-void TodoControl::uncheckTodo() {
+class TodoController {
+private:
+    unsigned int lastId;
+    std::vector<TodoModel> todos;
 
-}
+    TodoController() {
+        lastId = 0;
+        todos = std::vector<TodoModel>{};
+    }
 
-void TodoControl::listTodo() {
+public:
+    static TodoController* instance;
 
-}
+    void checkTodo(int);
+    void uncheckTodo(int);
+    void deleteTodo(int);
+    TodoModel peekTodo(int);
+    std::vector<TodoModel> listTodo();
 
-void TodoControl::deleteTodo() {
+    int editTodo(int);
+    int createTodo();
+};
 
-}
-
-void TodoControl::peekTodo() {
-    
-}
-
-TodoModel TodoControl::editTodo() {
-
-}
-
-TodoModel TodoControl::createTodo() {
-
-}
+#endif
