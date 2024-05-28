@@ -17,7 +17,7 @@
 #include <todo_lib\TodoController.h>
 #include <todo_lib\TodoModel.h>
 
-TodoController* TodoController::instance = &TodoController();
+TodoController* TodoController::instance = new TodoController();
 
 void TodoController::checkTodo(int id) {
     for (auto &todo : todos) {
@@ -47,36 +47,51 @@ void TodoController::deleteTodo(int id) {
     }), todos.end());
 }
 
-TodoModel TodoController::peekTodo(int id) {
+void TodoController::peekTodo(int id, TodoModel *pTodoModel) {
     for (auto &todo : todos) {
         if (todo.getId() == id) {
-            return todo;
+            *pTodoModel = todo;
+            return;
         }
     }
-    throw std::invalid_argument("Todo not found");
+    pTodoModel = NULL;
 }
 
-int TodoController::editTodo(int id) {
+int TodoController::editTodo(int id, std::string title, std::string description, bool status) {
     for (auto &todo : todos) {
         if (todo.getId() == id) {
-            std::string filler;
-            std::cout << "Title: ";
-            std::cin.ignore();
-            std::getline(std::cin, filler);
-            todo.setTitle(filler);
-
-            std::cout << "Description: ";
-            std::cin.ignore();
-            std::getline(std::cin, filler);
-            todo.setDescription(filler);
+            if (title != std::string(NULL)) {
+                todo.setTitle(title);
+            }
+            if (description != std::string(NULL)) {
+                todo.setDescription(description);
+            }
+            if (status != bool(NULL)) {
+                todo.setStatus(status);
+            }
             return id;
         }
     }
-    throw std::invalid_argument("Todo not found");
+    return NULL;
 }
 
-int TodoController::createTodo() {
-    TodoModel todo = TodoModel(++lastId);
+int TodoController::createTodo(std::string title) {
+    TodoModel todo = TodoModel(++lastId, title);
+    todos.push_back(todo);
+    return lastId;
+}
+int TodoController::createTodo(std::string title, std::string description) {
+    TodoModel todo = TodoModel(++lastId, title, description);
+    todos.push_back(todo);
+    return lastId;
+}
+int TodoController::createTodo(std::string title, bool status) {
+    TodoModel todo = TodoModel(++lastId, title, status);
+    todos.push_back(todo);
+    return lastId;
+}
+int TodoController::createTodo(std::string title, std::string description, bool status) {
+    TodoModel todo = TodoModel(++lastId, title, description, status);
     todos.push_back(todo);
     return lastId;
 }

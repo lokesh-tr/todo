@@ -10,8 +10,8 @@
 //
 // ===-----------------------------------------------------------------------------------------===
 
-#ifndef TODOCONTROL_H
-#define TODOCONTROL_H
+#ifndef TODOCONTROLLER_H
+#define TODOCONTROLLER_H
 
 #include <vector>
 
@@ -30,14 +30,17 @@ private:
 public:
     static TodoController* instance;
 
-    void checkTodo(int);
-    void uncheckTodo(int);
-    void deleteTodo(int);
-    TodoModel peekTodo(int);
+    void checkTodo(int id);
+    void uncheckTodo(int id);
+    void deleteTodo(int id);
+    void peekTodo(int id, TodoModel *pTodoModel);
     std::vector<TodoModel> listTodo();
 
-    int editTodo(int);
-    int createTodo();
+    int editTodo(int id, std::string title = NULL, std::string description = NULL, bool status = NULL);
+    int createTodo(std::string title);
+    int createTodo(std::string title, std::string description);
+    int createTodo(std::string title, bool status);
+    int createTodo(std::string title, std::string description, bool status);
 };
 
 #endif

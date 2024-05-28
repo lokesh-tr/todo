@@ -15,6 +15,7 @@
 #include <string>
 
 #include "todo_lib/TodoModel.h"
+#include "todo_lib/TodoController.h"
 
 void help();
 void list(bool describe, bool includeCompleted);
@@ -97,7 +98,6 @@ void deleteTodo(int id) {
 }
 
 void add(std::string title, std::string description, bool status) {
-    TodoModel todo(title, description, status);
-
-    std::cout << todo.getTitle() << todo.getDescription() << todo.getStatus() << std::endl;
+    int id = TodoController::instance->createTodo(title, description, status);
+    std::cout << "id: " << id << std::endl;    
 }
